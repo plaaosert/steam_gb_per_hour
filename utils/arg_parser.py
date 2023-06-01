@@ -140,7 +140,7 @@ def show_help():
         sec1_strings, key=len
     ))
 
-    length_left = terminal_cols - sec1_length - 4 if terminal_cols - sec1_length > 0 else 0
+    length_left = min(80, terminal_cols - sec1_length - 8) if terminal_cols - sec1_length > 0 else 0
     sec2_strings = [
         split_preserving_newlines(arg_actions[act].help_str, length_left) for act in sorted(arg_actions.keys())
     ]

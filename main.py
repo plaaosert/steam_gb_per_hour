@@ -52,6 +52,7 @@ playtimes = data_getter.get_steam_playtimes(apikey, steamid)
 if not playtimes:
     log_error(LOGLEVEL.CRITICAL, "Couldn't find any games because the Steam API returned no data. "
                                  "Check your api_key and steam_id files.")
+    log_error(LOGLEVEL.CRITICAL, "If you're sure they're right, use --no-cache to clear the cache.")
     exit(1)
 
 game_ids = [gameid for gameid in playtimes.keys()]
@@ -109,4 +110,5 @@ if len(sorted_sizevalues) > 0:
 else:
     log_error(LOGLEVEL.CRITICAL, "No installed games were found. "
                                  "Check your api_key, steam_id and steam_libraries.json files.")
+    log_error(LOGLEVEL.CRITICAL, "If you're sure they're right, use --no-cache to clear the cache.")
     log_error(LOGLEVEL.CRITICAL, "Use -h ({} -h) for help.".format(sys.argv[0]))
