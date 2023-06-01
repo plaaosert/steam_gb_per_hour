@@ -90,5 +90,6 @@ if len(sorted_sizevalues) > 0:
             os.path.abspath("results.log")
         ))
 else:
-    log_error(LOGLEVEL.CRITICAL, "No games were found. Check your api_key, steam_id and steam_libraries.json files.")
+    log_error(LOGLEVEL.CRITICAL, "No installed games were found. "
+                                 "Check your api_key, steam_id and steam_libraries.json files.")
     log_error(LOGLEVEL.CRITICAL, "Use -h ({} -h) for help.".format(sys.argv[0]))
