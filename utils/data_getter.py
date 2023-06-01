@@ -124,7 +124,6 @@ def get_steam_playtimes(apikey, steamid) -> Union[None, Dict[int, int]]:
             log_error(LOGLEVEL.CRITICAL, "Couldn't parse result of playtimes query (check Steam ID and API key)")
             return None
     else:
-        print(steamid)
         log_error(LOGLEVEL.CRITICAL, "Failed to get playtimes for {} (check Steam ID and API key)".format(
             steamid
         ))
