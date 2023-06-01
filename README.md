@@ -3,10 +3,10 @@ The premier service to find out how many gigabytes those hours are really worth.
 
 ## Prerequisites
 - You need a Steam Web API key. If you don't have one, get one here: https://steamcommunity.com/dev/apikey
-  - Copy this into the `config/api_key` file.
+  - Copy this into a file called `config/api_key`.
 
 - You'll need the Steam ID of an account (probably yours). There are many ways to get yours, such as https://steamdb.info/calculator/
-  - Copy this into the `config/steam_id` file, or provide it as a command-line parameter (`-u STEAMID`)
+  - Copy this into a file called `config/steam_id`, or provide it as a command-line parameter (`-u STEAMID`)
 
 - You need to know where your steam library or libraries are on your disk. Chances are you already know, but if you don't: 
   - Rightclick on a game, click **Browse local files...**
