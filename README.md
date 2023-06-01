@@ -37,16 +37,17 @@ Open an issue if it doesn't. Thanks.
                                               -|-
 -h                      (--help, -?, ?)        | Show this help message.
                                               -|-
--n                      (--no-cache)           | Delete all caches before starting processing. Use if something
-                                               | looks like it's going wrong.
+-n                      (--no-cache)           | Delete all caches before starting processing. Use if
+                                               | something looks like it's going wrong.
                                               -|-
--p <steam_library_path> (--steam-library-path) | Add a Steam library to the list of Steam libraries used to
-                                               | calculate file size. Placing a file called "steam_libraries.json"
-                                               | in the "config" directory will load those library paths
-                                               | automatically.
+-p <steam_library_path> (--steam-library-path) | Add a Steam library to the list of Steam libraries used
+                                               | to calculate file size. Placing a file called
+                                               | "steam_libraries.json" in the "config" directory will
+                                               | load those library paths automatically.
                                               -|-
--u <steam_id>           (--user-id)            | Set the Steam user ID used. Placing a file called "steam_id" in the
-                                               | "config" directory will make the program default to that user ID.
+-u <steam_id>           (--user-id)            | Set the Steam user ID used. Placing a file called
+                                               | "steam_id" in the "config" directory will make the
+                                               | program default to that user ID.
                                               -|-
 -v <loglevel>           (--verbosity)          | Set the log level of the program:
                                                | CRITICAL       (0) - silent apart from error messages
