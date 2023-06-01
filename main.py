@@ -21,8 +21,8 @@ steamid = variables["steamid"]
 steamlibs = variables["steamlibs"]
 
 info_hash = "{}|{}".format(
-    hashlib.sha256(apikey.encode("utf-8")).hexdigest(),
-    hashlib.sha256(steamid.encode("utf-8")).hexdigest()
+    hashlib.sha256(str(apikey).encode("utf-8")).hexdigest(),
+    hashlib.sha256(str(steamid).encode("utf-8")).hexdigest()
 )
 
 if constants.LAST_KEY_AND_ID != info_hash:
