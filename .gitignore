@@ -3,6 +3,7 @@ cache/
 config/api_key
 config/steam_id
 config/steam_libraries.json
+config/last_use
 results.log
 
 # Byte-compiled / optimized / DLL files

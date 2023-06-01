@@ -4,6 +4,12 @@ import os
 from . import pathutils
 from .basiclogger import log_failure, log_info, log_error, LOGLEVEL, log_warning
 
+LASTUSE_PATH = pathutils.from_root(os.path.join("config", "last_use"))
+LAST_KEY_AND_ID = ""
+if os.path.exists(LASTUSE_PATH):
+    with open(LASTUSE_PATH, "r") as f:
+        LAST_KEY_AND_ID = f.read()
+
 if not os.path.isdir(pathutils.from_root("config")):
     os.mkdir(pathutils.from_root("config"))
 

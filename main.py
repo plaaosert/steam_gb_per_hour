@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-
+import glob
+import hashlib
 import os.path
 import sys
 
 from utils import arg_parser, constants, data_getter, pathutils
 from utils.basiclogger import log, log_success, log_failure, log_info, log_error, log_warning, is_debug, LOGLEVEL
+from utils.pathutils import from_root
 
 
 def print_and_write(fp, *st, end="\n"):
@@ -17,6 +19,21 @@ variables = arg_parser.parse_args()
 apikey = constants.APIKEY
 steamid = variables["steamid"]
 steamlibs = variables["steamlibs"]
+
+info_hash = "{}|{}".format(
+    hashlib.sha256(apikey.encode("utf-8")).hexdigest(),
+    hashlib.sha256(steamid.encode("utf-8")).hexdigest()
+)
+
+if constants.LAST_KEY_AND_ID != info_hash:
+    log_info(LOGLEVEL.INFO, "Key or ID are different. Recaching everything.")
+    files = glob.glob(os.path.join(from_root("cache"), "*"))
+    for f in files:
+        os.remove(f)
+
+with open(constants.LASTUSE_PATH, "w") as f:
+    f.write(info_hash)
+
 
 if variables["help"]:
     arg_parser.show_help()
