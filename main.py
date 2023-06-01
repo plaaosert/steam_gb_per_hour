@@ -31,6 +31,12 @@ if not steamlibs:
     )
 
 playtimes = data_getter.get_steam_playtimes(apikey, steamid)
+
+if not playtimes:
+    log_error(LOGLEVEL.CRITICAL, "Couldn't find any games because the Steam API returned no data. "
+                                 "Check your api_key and steam_id files.")
+    exit(1)
+
 game_ids = [gameid for gameid in playtimes.keys()]
 
 name_lookups = data_getter.steam_ids_to_names(game_ids)
