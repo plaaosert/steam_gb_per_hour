@@ -2,7 +2,7 @@
 The premier service to find out how many gigabytes those hours are really worth.
 
 ## Prerequisites
-- You need a Steam Web API key. If you don't have one, get one here: https://steamcommunity.com/dev/apikey. You don't need a valid domain. Just put anything in there, it really doesn't matter.
+- You need a Steam Web API key. If you don't have one, get one here: https://steamcommunity.com/dev/apikey. You don't need it to be a domain you own. Just put anything in there, it really doesn't matter.
   - I'm not responsible for the results if it does, at some point, matter. If you're worried, I'd recommend revoking the key right after using it.
   - Copy this into a file called `config/api_key`.
 
